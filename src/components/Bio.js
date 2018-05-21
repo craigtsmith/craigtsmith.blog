@@ -27,7 +27,7 @@ class Bio extends React.Component {
           }}
         />
         <p>
-          though / written by me, <strong>craig t smith</strong> how very nice to meet you. <br/>
+          thought / written by me, <strong>craig t smith</strong> how very nice to meet you. <br/>
           <a href="https://twitter.com/craig_tsmith">
             i sometimes tweet
           </a>
