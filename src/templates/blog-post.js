@@ -10,6 +10,7 @@ class BlogPostTemplate extends React.Component {
   render() {
     const post = this.props.data.markdownRemark
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
+    const profileImage = get(this, 'props.data.profileImage')
     const { previous, next } = this.props.pathContext
 
     return (
@@ -32,7 +33,7 @@ class BlogPostTemplate extends React.Component {
             marginBottom: rhythm(1),
           }}
         />
-        <Bio />
+        <Bio profileImage={profileImage} />
 
         <ul
           style={{
@@ -74,12 +75,19 @@ export const pageQuery = graphql`
         author
       }
     }
+
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
       html
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+      }
+    }
+
+    profileImage: imageSharp(id: { regex: "/profile-pic/" }) {
+      sizes(maxWidth: 400 ) {
+        ...GatsbyImageSharpSizes
       }
     }
   }

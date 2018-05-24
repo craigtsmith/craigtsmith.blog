@@ -10,11 +10,12 @@ class BlogIndex extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const posts = get(this, 'props.data.allMarkdownRemark.edges')
+    const profileImage = get(this, 'props.data.profileImage')
 
     return (
       <div>
         <Helmet title={siteTitle} />
-        <Bio />
+        <Bio profileImage={profileImage} />
         {posts.map(({ node }) => {
           const title = get(node, 'frontmatter.title') || node.fields.slug
           return (
@@ -47,6 +48,7 @@ export const pageQuery = graphql`
         title
       }
     }
+
     allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
       edges {
         node {
@@ -59,6 +61,12 @@ export const pageQuery = graphql`
             title
           }
         }
+      }
+    }
+
+    profileImage: imageSharp(id: { regex: "/profile-pic/" }) {
+      sizes(maxWidth: 400 ) {
+        ...GatsbyImageSharpSizes
       }
     }
   }

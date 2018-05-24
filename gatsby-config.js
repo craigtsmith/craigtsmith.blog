@@ -1,11 +1,10 @@
 module.exports = {
   siteMetadata: {
     title: 'thoughts. words.',
-    author: 'Kyle Mathews',
-    description: 'A starter blog demonstrating what Gatsby can do.',
-    siteUrl: 'https://gatsbyjs.github.io/gatsby-starter-blog/',
+    author: 'craig t smith',
+    description: 'a blog.',
+    siteUrl: 'https://craigtsmith.blog',
   },
-  pathPrefix: '/gatsby-starter-blog',
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
@@ -13,6 +12,13 @@ module.exports = {
         path: `${__dirname}/src/pages`,
         name: 'pages',
       },
+    },
+    {
+        resolve: `gatsby-source-filesystem`,
+        options: {
+          path: `${__dirname}/src/images`,
+          name: 'images',
+        },
     },
     {
       resolve: `gatsby-transformer-remark`,
@@ -38,12 +44,6 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-plugin-google-analytics`,
-      options: {
-        //trackingId: `ADD YOUR TRACKING ID HERE`,
-      },
-    },
     `gatsby-plugin-feed`,
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
