@@ -13,7 +13,14 @@ class BlogIndex extends React.Component {
     const profileImage = get(this, 'props.data.profileImage')
 
     return (
-      <div>
+      <div
+        style={{
+          marginLeft: 'auto',
+          marginRight: 'auto',
+          maxWidth: rhythm(24),
+          padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+        }}
+      >
         <Helmet title={siteTitle} />
         <Bio profileImage={profileImage} />
         {posts.map(({ node }) => {
