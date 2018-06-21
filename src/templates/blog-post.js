@@ -109,7 +109,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         headerimg {
           childImageSharp {
-            sizes(maxHeight: 275) {
+            sizes(maxHeight: 320) {
               ...GatsbyImageSharpSizes
             }
           }

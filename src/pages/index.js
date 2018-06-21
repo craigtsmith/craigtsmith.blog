@@ -19,6 +19,7 @@ class BlogIndex extends React.Component {
           marginRight: 'auto',
           maxWidth: rhythm(24),
           padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
+          paddingTop: '0',
         }}
       >
         <Helmet title={siteTitle} />
