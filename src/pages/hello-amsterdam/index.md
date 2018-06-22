@@ -35,7 +35,7 @@ going for a walk beats sitting on a sofa.
 going to a pub beats drinking in your lounge.
 
 for us moving to amsterdam was always about an adventure, a challenge, a
-new chapter in the story of our lives. we decided, withing hours of 
+new chapter in the story of our lives. we decided, within hours of 
 arriving that we were going to form and nurture new habits, for a 
 happier, better life.
 
